@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sewedyModelStoreContainer" CdmEntityContainer="sewedyEntities">
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="sewedyModel.Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="TTask_ID" ColumnName="TTask_ID" />
+          <ScalarProperty Name="Ttitle" ColumnName="Ttitle" />
+          <ScalarProperty Name="Tdescription" ColumnName="Tdescription" />
+          <ScalarProperty Name="Tstatues" ColumnName="Tstatues" />
+          <ScalarProperty Name="duedate" ColumnName="duedate" />
+          <ScalarProperty Name="TF_userid" ColumnName="TF_userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userrs">
+      <EntityTypeMapping TypeName="sewedyModel.Userr">
+        <MappingFragment StoreEntitySet="Userr">
+          <ScalarProperty Name="UUSER_ID" ColumnName="UUSER_ID" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Upassword" ColumnName="Upassword" />
+          <ScalarProperty Name="Uemail" ColumnName="Uemail" />
+          <ScalarProperty Name="Urole" ColumnName="Urole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sewedyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TTask_ID" />
+    </Key>
+    <Property Name="TTask_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ttitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tdescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tstatues" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="duedate" Type="DateTime" Precision="3" />
+    <Property Name="TF_userid" Type="Int32" />
+    <NavigationProperty Name="Userr" Relationship="Self.FK__Tasks__TF_userid__45F365D3" FromRole="Tasks" ToRole="Userr" />
+  </EntityType>
+  <EntityType Name="Userr">
+    <Key>
+      <PropertyRef Name="UUSER_ID" />
+    </Key>
+    <Property Name="UUSER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Upassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Uemail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Urole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__TF_userid__45F365D3" FromRole="Userr" ToRole="Tasks" />
+  </EntityType>
+  <Association Name="FK__Tasks__TF_userid__45F365D3">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="0..1" />
+    <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="UUSER_ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="TF_userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sewedyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="Userrs" EntityType="Self.Userr" />
+    <AssociationSet Name="FK__Tasks__TF_userid__45F365D3" Association="Self.FK__Tasks__TF_userid__45F365D3">
+      <End Role="Userr" EntitySet="Userrs" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

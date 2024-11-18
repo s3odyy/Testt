@@ -1,0 +1,30 @@
+﻿<Page x:Class="yousef0523085.MangemntPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:yousef0523085"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MangemntPage">
+
+    <Grid>
+        <Image Source="IMG_200.JPG" Stretch="fill"></Image>
+        <Label Style="{StaticResource styleproject}" Foreground="White" Content="Task Id :" HorizontalAlignment="Left" Margin="11,23,0,0" VerticalAlignment="Top"/>
+        <Label Style="{StaticResource styleproject}" Foreground="White" Content="Title :" HorizontalAlignment="Left" Margin="12,74,0,0" VerticalAlignment="Top"/>
+        <Label Style="{StaticResource styleproject}" Foreground="White" Content="Description :" HorizontalAlignment="Left" Margin="12,125,0,0" VerticalAlignment="Top"/>
+        <Label Style="{StaticResource styleproject}" Foreground="White" Content="Status :" HorizontalAlignment="Left" Margin="448,27,0,0" VerticalAlignment="Top"/>
+        <Label Style="{StaticResource styleproject}" Foreground="White" Content="Employee email :" HorizontalAlignment="Left" Margin="406,81,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="464,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="5.609,0.533" Click="Add_Click"/>
+        <Button Content="Edit" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="584,227,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.43,-2.167" Click="Edit_Click"/>
+        <Button Content="Delete" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="698,227,0,0" VerticalAlignment="Top" Click="Delete_Click"/>
+        <ComboBox Name="compo2" HorizontalAlignment="Left" Margin="582,25,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="compo2_SelectionChanged"/>
+        <DataGrid Name="datagride2" Margin="0,278,0,0"/>
+        <TextBox Name="idmn" HorizontalAlignment="Left" Margin="77,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" Height="22"/>
+        <TextBox Name="titlemn" HorizontalAlignment="Left" Margin="68,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" Height="22"/>
+        <TextBox Name="descriptionmn" HorizontalAlignment="Left" Margin="100,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" Height="22"/>
+        <TextBox Name="emailmn" HorizontalAlignment="Left" Margin="55,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="60" Height="22"/>
+
+
+    </Grid>
+</Page>
